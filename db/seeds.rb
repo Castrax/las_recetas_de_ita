@@ -221,7 +221,7 @@ puts "Creating ingredients for a page 4..."
 puts "Finished a page 4!"
 
 puts "Creating ingredients for b page 1..."
-  url = "https://www.marmiton.org/recettes/index/ingredient/b/1/"
+  url = "https://www.marmiton.org/recettes/index/ingredient/b"
   html_file = open(url).read
   html_doc = Nokogiri::HTML(html_file)
   html_doc.search('.index-item-card-name').each do |element|
