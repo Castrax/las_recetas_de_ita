@@ -87,7 +87,7 @@
               <%= link_to "Ajouter des ingrédients", new_recipe_dose_path(@recipe), class: 'btn btn-primary mt-5', data: { toggle: 'modal', target: '#modalDoses' } %>
             <% else %>
               <% @recipe.doses.each do |d| %>
-                <p d-id="<%= d.id %>"><%= d.description %> - <%= Ingredient.find(id=d.ingredient_id).name %> <%= link_to "Supprimer", recipe_dose_path(d), method: :delete, data: { confirm: "Are you sure?" }, remote: true %> <%= link_to "Modifier", edit_recipe_dose_path(d), data: { toggle: 'modal', target: '#modalDoses' } %></p>
+                <p d-id="<%= d.id %>"><%= Ingredient.find(id=d.ingredient_id).name %> - <%= d.description %> <%= link_to "Supprimer", recipe_dose_path(d), method: :delete, data: { confirm: "Are you sure?" }, remote: true %> <%= link_to "Modifier", edit_recipe_dose_path(d), data: { toggle: 'modal', target: '#modalDoses' } %></p>
               <% end %>
               <p><%= link_to "Ajouter des ingrédients", new_recipe_dose_path(@recipe), class: 'btn btn-primary mt-5', data: { toggle: 'modal', target: '#modalDoses' } %></p>
             <% end %>
