@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @recipes = Recipe.first(2)
+    @recipes = Recipe.order("created_at").reverse_order.limit(3)
   end
 
   def profile
